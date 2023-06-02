@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monthly User Analysis Report</title>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Monthly User Analysis Report</h1>
+   <p>Congratulations {{ name }}, you've had an eventful month! We wanted to share your user status for this month and encourage you to keep up the good work. Take a look at your accomplishments and keep connecting with more people to continue your success.</p>
+    <table>
+        <tr>
+            <th>Number of Posts</th>
+            <th>Number of Followers</th>
+            <th>Number of Following</th>
+        </tr>
+        <tr>
+            <td>{{ num_posts }}</td>
+            <td>{{ num_followers }}</td>
+            <td>{{ num_followings }}</td>
+        </tr>
+    </table>
+</body>
+</html>

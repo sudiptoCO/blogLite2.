@@ -1,0 +1,16 @@
+@app.route('/get_feed',methods= ['GET','POST'])
+def get_feed():
+    print(g_user)
+    result = db.engine.execute(f"SELECT * FROM followers where follower_id = {g_user}")
+    followers_list = []
+    for row in result:
+        follower = row[1]
+        followers_list.append(follower)
+    
+    posts = []
+    for person in followers_list:
+        posts += BlogPost.query.filter_by(author_id=person).all()
+    
+    print(posts[0].id)
+    print(followers_list)
+    return jsonify({"hi":"hi"})
